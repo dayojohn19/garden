@@ -1,0 +1,122 @@
+{
+  "REGION I": [
+    "ILOCOS NORTE",
+    "ILOCOS SUR",
+    "LA UNION",
+    "PANGASINAN"
+  ],
+  "REGION II": [
+    "BATANES",
+    "CAGAYAN",
+    "ISABELA",
+    "NUEVA VIZCAYA",
+    "QUIRINO"
+  ],
+  "REGION III": [
+    "AURORA",
+    "BATAAN",
+    "BULACAN",
+    "NUEVA ECIJA",
+    "PAMPANGA",
+    "TARLAC",
+    "ZAMBALES"
+  ],
+  "REGION IV-A": [
+    "BATANGAS",
+    "CAVITE",
+    "LAGUNA",
+    "QUEZON",
+    "RIZAL"
+  ],
+  "REGION IV-B": [
+    "MARINDUQUE",
+    "OCCIDENTAL MINDORO",
+    "ORIENTAL MINDORO",
+    "PALAWAN",
+    "ROMBLON"
+  ],
+  "REGION V": [
+    "ALBAY",
+    "CAMARINES NORTE",
+    "CAMARINES SUR",
+    "CATANDUANES",
+    "MASBATE",
+    "SORSOGON"
+  ],
+  "REGION VI": [
+    "AKLAN",
+    "ANTIQUE",
+    "CAPIZ",
+    "GUIMARAS",
+    "ILOILO",
+    "NEGROS OCCIDENTAL"
+  ],
+  "REGION VII": [
+    "BOHOL",
+    "CEBU",
+    "NEGROS ORIENTAL",
+    "SIQUIJOR"
+  ],
+  "REGION VIII": [
+    "BILIRAN",
+    "EASTERN SAMAR",
+    "LEYTE",
+    "NORTHERN SAMAR",
+    "SAMAR (WESTERN SAMAR)",
+    "SOUTHERN LEYTE"
+  ],
+  "REGION IX": [
+    "ZAMBOANGA DEL NORTE",
+    "ZAMBOANGA DEL SUR",
+    "ZAMBOANGA SIBUGAY"
+  ],
+  "REGION X": [
+    "BUKIDNON",
+    "CAMIGUIN",
+    "LANAO DEL NORTE",
+    "MISAMIS OCCIDENTAL",
+    "MISAMIS ORIENTAL"
+  ],
+  "REGION XI": [
+    "COMPOSTELA VALLEY",
+    "DAVAO (DAVAO DEL NORTE)",
+    "DAVAO DEL SUR",
+    "DAVAO OCCIDENTAL",
+    "DAVAO ORIENTAL"
+  ],
+  "REGION XII": [
+    "COTABATO (NORTH COT.)",
+    "SARANGANI",
+    "SOUTH COTABATO",
+    "SULTAN KUDARAT"
+  ],
+  "REGION XIII": [
+    "AGUSAN DEL NORTE",
+    "AGUSAN DEL SUR",
+    "DINAGAT ISLANDS",
+    "SURIGAO DEL NORTE",
+    "SURIGAO DEL SUR"
+  ],
+  "BARMM": [
+    "BASILAN",
+    "LANAO DEL SUR",
+    "MAGUINDANAO",
+    "SULU",
+    "TAWI-TAWI"
+  ],
+  "CAR": [
+    "ABRA",
+    "APAYAO",
+    "BENGUET",
+    "IFUGAO",
+    "KALINGA",
+    "MOUNTAIN PROVINCE"
+  ],
+  "NCR": [
+    "NATIONAL CAPITAL REGION - FOURTH DISTRICT",
+    "NATIONAL CAPITAL REGION - MANILA",
+    "NATIONAL CAPITAL REGION - SECOND DISTRICT",
+    "NATIONAL CAPITAL REGION - THIRD DISTRICT",
+    "TAGUIG - PATEROS"
+  ]
+}
