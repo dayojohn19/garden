@@ -15,6 +15,7 @@ class Home extends StatefulWidget {
 // ----------------
 
 class _HomeState extends State<Home> {
+  var isShowMyCollection = false;
   final Future<String> _calculation = Future<String>.delayed(
     const Duration(seconds: 2),
     () => 'Data Loaded',
@@ -102,7 +103,7 @@ class _HomeState extends State<Home> {
         debugPrint('$currentUserDetails');
         userAppUsername = currentUserDetails[0];
         userAppUserID = currentUserDetails[1];
-
+        isShowMyCollection = true;
         usernameController.text = currentUserDetails[0];
         userIDController.text = currentUserDetails[1];
         // return  currentUserDetails as Map<String,dynamic>;
@@ -154,37 +155,47 @@ class _HomeState extends State<Home> {
                       height: 130,
                     ),
                     Center(
-                      child: ElevatedButton.icon(
-                        onPressed: () async {
-                          await Navigator.pushNamed(context, '/collection',
-                              arguments: {
-                                'username': userAppUsername,
-                                'userID': userAppUserID
-                              });
-                          setState(() {
-                            // data = {
-                            //   'userAppUserName': userAppUserName,
-                            //   'placeURL': result['placeURL']
-                            // };
-                          });
-                        },
-                        label: Text(
-                          'My Collections',
-                          style: TextStyle(color: Colors.amber[700]),
-                        ),
-                        icon: const Icon(Icons.collections_rounded),
-                      ),
+                        child: isShowMyCollection
+                            ? ElevatedButton.icon(
+                                onPressed: () async {
+                                  await Navigator.pushNamed(
+                                      context, '/collection', arguments: {
+                                    'username': userAppUsername,
+                                    'userID': userAppUserID
+                                  });
+                                  setState(() {
+                                    // data = {
+                                    //   'userAppUserName': userAppUserName,
+                                    //   'placeURL': result['placeURL']
+                                    // };
+                                  });
+                                },
+                                label: Text(
+                                  'My Collection',
+                                  style: TextStyle(color: Colors.amber[700]),
+                                ),
+                                icon: const Icon(
+                                  Icons.collections_rounded,
+                                  color: Colors.green,
+                                ),
+                              )
+                            : const Text(' ')),
+                    const SizedBox(
+                      height: 40,
                     ),
                     Text(
                       'Welcome  \n $userAppUsername',
                       style: const TextStyle(
-                          fontSize: 28,
+                          fontSize: 45,
                           letterSpacing: 2,
                           color: Color.fromARGB(255, 37, 19, 19)),
                       textAlign: TextAlign.center,
                     ),
+                    const SizedBox(
+                      height: 50,
+                    ),
                     const Text(
-                      'Enjoy Cards Collecting !',
+                      'Enjoy Collecting Cards !',
                       style: TextStyle(fontSize: 16, color: Colors.blue),
                       textAlign: TextAlign.center,
                     ),
@@ -228,42 +239,87 @@ class _HomeState extends State<Home> {
                             const SizedBox(
                               height: 20,
                             ),
-                            ElevatedButton(
-                                child: const Text('Delete details to device'),
-                                onPressed: () {
-                                  clearDetailsFromDevice();
-                                }),
+                            // ElevatedButton(
+
+                            //     child: const Text('Delete details to device'),
+                            //     onPressed: () {
+                            //       clearDetailsFromDevice();
+                            //     }),
                           ],
                         );
                       } else {
                         return Center(
                           child: Column(
                             children: [
-                              const Text('Your Username :  '),
-                              TextFormField(
-                                controller: usernameController,
-                                textAlign: TextAlign.center,
-                                onChanged: (input) {
-                                  setState(() {
-                                    userAppUsername = input;
-                                  });
-                                },
+                              SizedBox(
+                                width: 250,
+                                child: Column(
+                                  children: [
+                                    TextFormField(
+                                      decoration: const InputDecoration(
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.orange),
+                                        ),
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Colors.orange,
+                                          ),
+                                        ),
+                                        prefixIcon: Icon(
+                                          Icons.person,
+                                          color: Colors.orange,
+                                        ),
+                                        hintText: "Your Username",
+                                        hintStyle:
+                                            TextStyle(color: Colors.orange),
+                                      ),
+                                      controller: usernameController,
+                                      textAlign: TextAlign.center,
+                                      onChanged: (input) {
+                                        setState(() {
+                                          userAppUsername = input;
+                                        });
+                                      },
+                                    ),
+                                    const SizedBox(
+                                      height: 20,
+                                    ),
+                                    TextFormField(
+                                      decoration: const InputDecoration(
+                                        focusedBorder: UnderlineInputBorder(
+                                          borderSide:
+                                              BorderSide(color: Colors.orange),
+                                        ),
+                                        enabledBorder: UnderlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: Colors.orange,
+                                          ),
+                                        ),
+                                        prefixIcon: Icon(
+                                          Icons.password,
+                                          color: Colors.orange,
+                                        ),
+                                        hintText: "Your Pin",
+                                        hintStyle:
+                                            TextStyle(color: Colors.orange),
+                                      ),
+                                      controller: userIDController,
+                                      textAlign: TextAlign.center,
+                                      onChanged: (input) {
+                                        // setState(() {
+                                        //   userAppUserID = input;
+                                        // });
+                                      },
+                                    ),
+                                  ],
+                                ),
                               ),
                               const SizedBox(
-                                height: 20,
-                              ),
-                              const Text('Pin: '),
-                              TextFormField(
-                                controller: userIDController,
-                                textAlign: TextAlign.center,
-                                onChanged: (input) {
-                                  // setState(() {
-                                  //   userAppUserID = input;
-                                  // });
-                                },
+                                height: 50,
                               ),
                               ElevatedButton(
-                                  child: const Text('Log In'),
+                                  child: const Text('Start Collecting'),
                                   onPressed: () {
                                     setState(() {
                                       debugPrint(

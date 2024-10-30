@@ -70,7 +70,7 @@ class _MyCollectionState extends State<MyCollection> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.blue[200],
+        backgroundColor: Colors.green[300],
         title: const Text('My Collections'),
         centerTitle: true,
         elevation: 0,

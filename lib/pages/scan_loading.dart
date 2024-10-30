@@ -16,7 +16,7 @@ class _ScanLoadingState extends State<ScanLoading> {
   void setupScanResult() async {
     debugPrint('\n\n\n How Many SetupScan Result \n\n');
     dynamic data = ModalRoute.of(context)?.settings.arguments;
- 
+
     debugPrint('Settingup Scan result');
     // final data = ModalRoute.of(context)!.settings.arguments;
     FetchAPIservice instance =

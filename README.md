@@ -1,5 +1,19 @@
 # app
 
+
+BUILD RELEASE ON COMMAND 
+
+flutter build apk --release
+
+
+Icon Generator here 
+https://www.appicon.co
+then put to ios/Runner/Assets.xcassets
+replace that 
+android/app/main/res
+replace all the mipmap
+on mipmap the .png files rename to "ic_launcher.png"
+
 A new Flutter project.
 
 ## Getting Started
