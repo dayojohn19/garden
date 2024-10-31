@@ -67,14 +67,15 @@ class _HomeState extends State<Home> {
 
 // clearing data
   Future<void> saveDetailsFromDevice() async {
+    setState(() {
+      userAppUsername = usernameController.text;
+      userAppUserID = userIDController.text;
+      isShowMyCollection = true;
+    });
     debugPrint('\nSaving Username $userAppUsername ID $userAppUserID');
     final prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(
         'currentUserLoginDetails', [userAppUsername, userAppUserID]).then((_) {
-      setState(() {
-        userAppUsername = userAppUsername;
-        userAppUserID = userAppUserID;
-      });
       getAuthVisitor();
       showDialog(
         context: context,
@@ -82,7 +83,7 @@ class _HomeState extends State<Home> {
           return const SimpleDialog(
             children: [
               Center(
-                child: Text('Details Saved from device'),
+                child: Text('Log out'),
               ),
             ],
           );
@@ -117,6 +118,11 @@ class _HomeState extends State<Home> {
   Future<void> clearDetailsFromDevice() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear().then((_) {
+      setState(() {
+        userAppUserID = '';
+        userAppUsername = '';
+        isShowMyCollection = false;
+      });
       showDialog(
         context: context,
         builder: (context) {
@@ -239,12 +245,11 @@ class _HomeState extends State<Home> {
                             const SizedBox(
                               height: 20,
                             ),
-                            // ElevatedButton(
-
-                            //     child: const Text('Delete details to device'),
-                            //     onPressed: () {
-                            //       clearDetailsFromDevice();
-                            //     }),
+                            ElevatedButton(
+                                child: const Text('Delete details to device'),
+                                onPressed: () {
+                                  clearDetailsFromDevice();
+                                }),
                           ],
                         );
                       } else {
