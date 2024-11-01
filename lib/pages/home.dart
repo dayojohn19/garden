@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
           return const SimpleDialog(
             children: [
               Center(
-                child: Text('Log out'),
+                child: Text('Details saved to Device !'),
               ),
             ],
           );
@@ -246,7 +246,7 @@ class _HomeState extends State<Home> {
                               height: 20,
                             ),
                             ElevatedButton(
-                                child: const Text('Delete details to device'),
+                                child: const Text('Log out'),
                                 onPressed: () {
                                   clearDetailsFromDevice();
                                 }),
