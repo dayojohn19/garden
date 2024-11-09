@@ -87,7 +87,7 @@ class _QRScannerState extends State<QRScanner> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.blue[200],
+        backgroundColor: Colors.grey[200],
         title: const Text('Scan QR CODE'),
         centerTitle: true,
         elevation: 0,

@@ -157,6 +157,31 @@ class _HomeState extends State<Home> {
               children: [
                 Column(
                   children: [
+                    
+                    Container(
+                       
+                      margin: const EdgeInsets.only(right: 15.0),
+                      alignment: Alignment.topRight,
+                      
+                      child:
+                      
+                       ElevatedButton(
+                        
+                        style: ElevatedButton.styleFrom(
+                          foregroundColor: Colors.white,
+                              backgroundColor: Colors.red[400],
+                              
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 10),
+                              textStyle: const TextStyle(color: Colors.white,
+                                  fontSize: 15, fontWeight: FontWeight.bold)),
+                          child: const Text('Log out'),
+                          
+                          onPressed: () {
+                            clearDetailsFromDevice();
+                          }),
+                    ),
+
                     const SizedBox(
                       height: 130,
                     ),
@@ -169,20 +194,32 @@ class _HomeState extends State<Home> {
                                     'username': userAppUsername,
                                     'userID': userAppUserID
                                   });
-                                  setState(() {
+                                  // setState(() {
                                     // data = {
                                     //   'userAppUserName': userAppUserName,
                                     //   'placeURL': result['placeURL']
                                     // };
-                                  });
+                                  // });
                                 },
-                                label: Text(
+                                label: const Text(
                                   'My Collection',
-                                  style: TextStyle(color: Colors.amber[700]),
+                                  style: TextStyle(color: Colors.blue),
                                 ),
                                 icon: const Icon(
                                   Icons.collections_rounded,
-                                  color: Colors.green,
+                                  color: Colors.blue,
+                                ),
+                                                              style: ElevatedButton.styleFrom(
+                                  iconColor: Colors.blue,
+                                  foregroundColor: Colors.blue,
+                                  tapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                  side: const BorderSide(
+                                      width: 1, color: Colors.grey),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                    20,
+                                  )),
                                 ),
                               )
                             : const Text(' ')),
@@ -201,7 +238,7 @@ class _HomeState extends State<Home> {
                       height: 50,
                     ),
                     const Text(
-                      'Enjoy Collecting Cards !',
+                      ' ',
                       style: TextStyle(fontSize: 16, color: Colors.blue),
                       textAlign: TextAlign.center,
                     ),
@@ -227,13 +264,13 @@ class _HomeState extends State<Home> {
                                 'username': userAppUsername,
                                 'userID': userAppUserID
                               }),
-                              label: const Text('Scan QR CODE'),
+                              
+                              label: const Text('Scan '),
                               icon: const Icon(Icons.qr_code),
                               style: ElevatedButton.styleFrom(
-                                //  fixedSize: 2,
-                                // padding: const EdgeInsets.zero,
+                                iconColor: Colors.blue,
+                                 foregroundColor: Colors.blue,
                                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-
                                 side: const BorderSide(
                                     width: 1, color: Colors.grey),
                                 shape: RoundedRectangleBorder(
@@ -245,11 +282,7 @@ class _HomeState extends State<Home> {
                             const SizedBox(
                               height: 20,
                             ),
-                            ElevatedButton(
-                                child: const Text('Log out'),
-                                onPressed: () {
-                                  clearDetailsFromDevice();
-                                }),
+
                           ],
                         );
                       } else {
@@ -348,7 +381,7 @@ class _HomeState extends State<Home> {
                         );
                       }
                     } else {
-                      return const CircularProgressIndicator();
+                      return const Center(child: CircularProgressIndicator());
                     }
                   },
                 ),
