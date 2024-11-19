@@ -71,7 +71,7 @@ class _MyCollectionState extends State<MyCollection> {
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
         backgroundColor: Colors.grey[200],
-        title: RichText(text:const TextSpan(text: 'My Album',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35,color: Colors.black))),
+        title: RichText(text:const TextSpan(text: 'My Collection',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 35,color: Colors.black))),
         centerTitle: true,
         elevation: 0,
         
